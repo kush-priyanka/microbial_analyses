@@ -11,39 +11,39 @@ metadata <- read.table("C:/Users/priya/Box/AZ_UA_Jan2022/2021_Ongoing_Projects/O
                        header=T,  sep="\t") %>%
   select(ID, Treatment) %>%
   drop_na(Treatment) %>%
-filter(ID != "KP4480")
+  filter(ID != "KP4480")
 
 ## Import ASV + taxa combined rarefied file
 rar <- read.table("C:/Users/priya/Box/AZ_UA_Jan2022/2021_Ongoing_Projects/Oak_Study/bac_16S/Post_dada2_Files/Bac_Dec20_2021/Oak_16S_ASV_Rarefy_12172021.txt",
                  header=T,  sep="\t")
 ## Add asv number instead of sequences
-rar <- cbind(rar, "asv"=1:nrow(rar)) 
-rar$asv<-paste('asv', rar$asv, sep="_")
+rar <- cbind(rar, "asv"=1:nrow(rar)) ## new column asv has numbers is the last column
+rar$asv<-paste('asv', rar$asv, sep="_") ##numbers appended with asv, eg asv_45
 
-## Subset taxonomy data including asv number and taxonomy
-taxa <- rar[, c(28, 21:27)]
+## Subset taxonomy data including asv number and taxonomy columns (kingdom,.., species)
+taxa <- rar[, c(28, 21:27)] #asv28 is the first column now
 
 ## Convert taxonomy labels to lowercase (optional)
 taxonomy <- taxa %>%
   select("asv", "Kingdom","Phylum", "Class", "Order", "Family",  "Genus","Species") %>%
   rename_all(tolower)
 
-
 ## Subset asv counts 
-asv <- rar[, c(28,2:20)]
+asv <- rar[, c(28,2:20)] #asv column 28 is first
 
 ## manipulate dataframe to have asv numbers as column and sample id as rownames
-rownames(asv) <- asv$asv
-read <- t(asv[, 2:20])
-ID <- rownames(read)
-rownames(read) <- NULL
-read <- cbind(ID, read)
+rownames(asv) <- asv$asv #change rownames to asv numbers
+read <- t(asv[, 2:20]) #tranpose dataframe so sample id is rownames and asv_num columns
+ID <- rownames(read) #create a new column that has rownames
+rownames(read) <- NULL #remove the actual rownames
+read <- cbind(ID, read) #merge ID column and read counts
 read <- data.frame(read)
 
 ## Calculate asv counts per sample id
 asv_counts <- read %>%
   select(ID, starts_with("asv"))%>%
   pivot_longer(-ID, names_to="asv", values_to = "count")  
+
 asv_counts$count <- as.numeric(asv_counts$count)
   
 ## Join three datsets and calculate relative abundance
