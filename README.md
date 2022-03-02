@@ -14,11 +14,11 @@
 - Format  ASV + Taxonomy table as per the FAPROTAX.R script
 - Go terminal on your laptop 
 - Change the directory to FAPROTAX folder
-  ```
+```
   cd C:/Users/priya/Downloads/FAPROTAX_1.2.4
-  ```
+```
 - Run the following code
-  ```
+```
   python collapse_table.py -i C:/Users/priya/Oak_Study/bac_ITS/Faprotax/16S_oak_asv_faprotax_01132022.txt -o oak_faprotax.txt -g FAPROTAX.txt -d "taxonomy" --omit_columns '0' -r report_16Soak.txt -v
   ```
 
@@ -37,7 +37,7 @@
 - Copy the FUNGUILD [script](https://raw.githubusercontent.com/UMNFuN/FUNGuild/master/Guilds_v1.1.py) in a textfile and save it as Guilds_v1.1.py. (.py extension is important)
 - Save the python script in a folder of your choice (folder: Python_scripts)
 - Go terminal on your laptop 
--  Install "requests" package
+- Install "requests" package
 ```
 pip install requests
 ```
@@ -48,7 +48,6 @@ pip install requests
 - Run the following code
 ```
 python Guilds_v1.1.py -otu C:\Users\priya\Box\Oak_Study\fun_ITS\FUNGuild\ITS_oak_asv_funguild_01202022.txt -db fungi -m -u
-
 ```
 - Descriptors of the files used in the code (update the file path and names based on your data)
   - input file location:      C:\Users\priya\Box\Oak_Study\fun_ITS\FUNGuild\ITS_oak_asv_funguild_01202022.txt
