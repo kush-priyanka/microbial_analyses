@@ -17,17 +17,17 @@
 ```
   cd C:/Users/priya/Downloads/FAPROTAX_1.2.4
 ```
-- Run the following code
+- Determine the path to your correctly formatted file (C:/Users/priya/Oak_Study/bac_ITS/Faprotax/16S_oak_asv_faprotax_01132022.txt)
+
+- Make a python call on the script
 ```
   python collapse_table.py -i C:/Users/priya/Oak_Study/bac_ITS/Faprotax/16S_oak_asv_faprotax_01132022.txt -o oak_faprotax.txt -g FAPROTAX.txt -d "taxonomy" --omit_columns '0' -r report_16Soak.txt -v
-  ```
+```
 
-- Descriptors of the files used in the code (update the file path and names based on your data)
-  - input file location:      C:/Users/priya/Oak_Study/bac_ITS/Faprotax/16S_oak_asv_faprotax_01132022.txt
+- Descriptors of the output files used in the python script (update the names based on your data)
+  - output file 1 (functional groups with counts/sample):      oak_faprotax.txt
   
-  - output file (functional groups with counts/sample):      oak_faprotax.txt
-  
-  - output file (functional groups with taxa names that are associated with different functions): report_16Soak.txt
+  - output file 2 (functional groups with taxa names that are associated with different functions): report_16Soak.txt
   
   - Faprotax database: FAPROTAX.txt
   
@@ -45,11 +45,14 @@ pip install requests
 ```
 > cd Phyton_scripts
 ```
-- Run the following code
+- Determine the path to your correctly formatted file (/Users/priya/Box/Oak_Study/fun_ITS/FUNGuild/ITS_oak_asv_funguild_01202022.txt)
+
+- Make sure that your computer is connected to the Internet, as the script will need to access the online database of taxonomic key words
+
+- Make a python call on the script
 ```
 python Guilds_v1.1.py -otu C:\Users\priya\Box\Oak_Study\fun_ITS\FUNGuild\ITS_oak_asv_funguild_01202022.txt -db fungi -m -u
 ```
-- Descriptors of the files used in the code (update the file path and names based on your data)
-  - input file location:      C:\Users\priya\Box\Oak_Study\fun_ITS\FUNGuild\ITS_oak_asv_funguild_01202022.txt
+
   
 
