@@ -8,7 +8,7 @@
   - Stacked graph at Phylum treatment level
 
 ### Instructions for [Faprotax](https://pages.uoregon.edu/slouca/LoucaLab/archive/FAPROTAX/lib/php/index.php) ###
-- Download [python](https://www.python.org/downloads/)and update requests by using pip
+- Download [python](https://www.python.org/downloads/)
 - Download latest version of the [FAPROTAX](http://www.loucalab.com/archive/FAPROTAX/lib/php/index.php?section=Download) 
 - Unzip the FAPROTAX folder
 - Format  ASV + Taxonomy table as per the FAPROTAX.R script
@@ -37,6 +37,10 @@
 - Copy the FUNGUILD [script](https://raw.githubusercontent.com/UMNFuN/FUNGuild/master/Guilds_v1.1.py) in a textfile and save it as Guilds_v1.1.py. (.py extension is important)
 - Save the python script in a folder of your choice (folder: Python_scripts)
 - Go terminal on your laptop 
+-  Install "requests" package
+```
+pip install requests
+```
 - Change directory to where python script Guilds_v1.1.py is
 ```
 > cd Phyton_scripts
