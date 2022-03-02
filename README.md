@@ -13,7 +13,7 @@
 - Unzip the FAPROTAX folder
 - Format  ASV + Taxonomy table as per the FAPROTAX.R script
 - Go terminal on your laptop 
-- Change the directory to FAPROTAX folder
+- Change the directory to FAPROTAX folder \n
 `cd C:/Users/priya/Desktop/FAPROTAX_1.2.4`
 - Run the following code
   ```
@@ -25,7 +25,7 @@
   
   - output file (functional groups with counts/sample):      oak_faprotax.txt
   
-  -output file (functional groups with taxa names that are associated with different functions): report_16Soak.txt
+  - output file (functional groups with taxa names that are associated with different functions): report_16Soak.txt
   
   - Faprotax database: FAPROTAX.txt
 
