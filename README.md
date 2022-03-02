@@ -13,8 +13,8 @@
 - Unzip the FAPROTAX folder
 - Format  ASV + Taxonomy table as per the FAPROTAX.R script
 - Go terminal on your laptop 
-- Change the directory to FAPROTAX folder \n
-`cd C:/Users/priya/Desktop/FAPROTAX_1.2.4`
+- Change the directory to FAPROTAX folder
+  - `cd C:/Users/priya/Desktop/FAPROTAX_1.2.4`
 - Run the following code
   ```
   python collapse_table.py -i C:/Users/priya/Desktop/16S_oak_asv_faprotax_01132022.txt -o oak_faprotax.txt -g FAPROTAX.txt -d "taxonomy" --omit_columns '0' -r report_16Soak.txt -v
