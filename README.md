@@ -42,10 +42,11 @@
 > cd Phyton_scripts
 ```
 - Run the following code
-  ```
+```
 python Guilds_v1.1.py -otu C:\Users\priya\Box\Oak_Study\fun_ITS\FUNGuild\ITS_oak_asv_funguild_01202022.txt -db fungi -m -u
-  ```
+
+```
 - Descriptors of the files used in the code (update the file path and names based on your data)
   - input file location:      C:\Users\priya\Box\Oak_Study\fun_ITS\FUNGuild\ITS_oak_asv_funguild_01202022.txt
   
-  - Faprotax database: FAPROTAX.txt
+
