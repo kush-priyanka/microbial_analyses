@@ -24,6 +24,12 @@ ggplot(map.wbl, aes(Axis01, Axis02))+
   geom_point(aes(color = Treatment, shape = Horizon), 
              alpha = 0.8, size=4)+
   aes(fill = factor(Treatment)) + 
+  geom_text(data = map.wbl,
+            aes(Axis01, Axis02,
+                label = Sample_name),
+            size = 3,
+            vjust = 0,
+            hjust = 0) +
   geom_polygon(data = hull_cyl, 
                alpha = 0.3)+
   theme_bw()+
@@ -44,3 +50,6 @@ ggplot(map.wbl, aes(Axis01, Axis02,
   theme(legend.position="right")
 dev.off()
 
+## Note: Add sample labels using geom_text
+#geom_text(data = map.wbl,aes(Axis01, Axis02,label = Sample_name),
+#size = 3, vjust = 0,hjust = 0)
