@@ -2,6 +2,9 @@
 - Scripts
   - Stacked graphs
   - Ordination with polygons
+  - Script to format input file for Faprotax and plot
+  - Script to format input file for FUnGuild and plot
+  - Heatmap
 - plots
   - Stacked graph at Cyanobacteria phylum
   - Stacked graph at Phylum sample level

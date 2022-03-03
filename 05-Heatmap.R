@@ -1,7 +1,7 @@
 ## Load library
 library(ggplot2)
 
-setwd("C:/Users/priya/Box/AZ_UA_Jan2022/2021_Ongoing_Projects/Oak_Study/Files_For_Kamila_Figures/Functional_Predictions/")
+## Set working directory to where the input data file is
 
 ## Import mean average proportion for selected microbial functions
 func.melt<- read.table("Oak_Selected_Functions_AvgProportion_Heatmap_030222022.txt", 
