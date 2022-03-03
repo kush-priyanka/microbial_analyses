@@ -5,8 +5,12 @@ library(ggplot2)
 
 ## Import mean average proportion for selected microbial functions
 func.melt<- read.table("Oak_Selected_Functions_AvgProportion_Heatmap_030222022.txt", 
-                       sep = "\t", header = T)
+                       sep = "\t", header = T) 
 
+## Turn off scientific notation for numbers
+options(scipen = 999)
+
+## Set the order of labels backwards for correct order output
 func.melt$variable <- factor(func.melt$variable,
                              levels = c("Wood.Saprotroph",
                                         "Soil.Saprotroph",
@@ -42,7 +46,7 @@ pdf("Oak_Microbial_Function_heatmap_03022022.pdf",
 ggplot(func.melt, aes(x = Treatment, 
                       y = variable, 
                       fill = value)) +
-  geom_tile(color = "gray") +
+  geom_tile(color = "lightgray") +
   geom_text(aes(x = Treatment, 
                 y = variable, label = value))+
   coord_fixed(ratio = 0.2)+
@@ -51,19 +55,18 @@ ggplot(func.melt, aes(x = Treatment,
     "yellow", 
     "orange", 
     "red"), 
-    breaks = c(0, 0.2, 0.5,0.7))+
+    breaks = c(0,0.2, 0.5, 0.7))+
   scale_x_discrete(position = "top") +
   ylab("Selected Microbial Functions") +
   theme_minimal(base_size = 12) +
-  theme(legend.title = element_blank())+
-  #labs(fill = "Average proportion")+
+  theme(legend.title = element_blank()) +
   theme(axis.ticks = element_blank(),
         axis.ticks.y = element_blank(),
         axis.title.x = element_blank(),
         axis.text.x = element_text(size = 10,  
                                    face = "bold", 
                                    color = "black"),
-        axis.title.y = element_text(size = 14, 
+        axis.title.y = element_text(size = 12, 
                                     face = "bold"),
         axis.text.y = element_text(size = 10, 
                                    face = "bold", 
@@ -80,6 +83,3 @@ ggplot(func.melt, aes(x = Treatment,
   guides(fill = guide_colorbar(title = "Average Proportion", 
                                title.position = "top"))
 dev.off()
-
-
-
