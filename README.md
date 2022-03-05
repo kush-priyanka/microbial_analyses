@@ -5,6 +5,8 @@
   - Script to format input file for Faprotax and plot
   - Script to format input file for FUnGuild and plot
   - Heatmap
+  - Relative abundance
+  - Run DESeq2 analysis and plot
 - plots
   - Stacked graph at Cyanobacteria phylum
   - Stacked graph at Phylum sample level
