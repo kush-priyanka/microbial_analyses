@@ -43,7 +43,7 @@ bac.oak <- decostand(bac.asv,
                      method = "total")
 apply(bac.oak, 1, sum) #1 for all samples
 
-## Transpose the relative abundance dataframe to before adding taxonomy info
+## Transpose the relative abundance dataframe before adding taxonomy info
 bac.oak.t <- as.data.frame(t(bac.oak))
 all(rownames(bac.oak.t) == rownames(taxa)) #should be TRUE
 
