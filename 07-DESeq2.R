@@ -9,7 +9,7 @@ library(ggplot2)
 library(tidyverse)
 library(ggtext)
 
-setwd("C:/Users/priya/Box/AZ_UA_Jan2022/2021_Ongoing_Projects/Oak_Study/bac_16S/Post_dada2_Files/Bac_Dec20_2021")
+## Set directory
 
 ## Import bacterial/archaeal or fungal ASV table and metadata file
 bac.asv.tax <- read.table("Oak_16S_ASV_Rarefy_12172021.txt", 
