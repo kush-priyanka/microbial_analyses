@@ -24,7 +24,7 @@ bac.asv <- t(bac.asv.taxa[,-c(20:26)])
 dim(bac.asv)
 
 ## Import mapping file
-map.oak <- read.table("Oak_16S_MappingFile_Richness_Ordination_12.19.2021.txt", 
+map.oak <- read.table("Oak_16S_MappingFile_12.19.2021.txt", 
                       sep = "\t", 
                       header = T, 
                       row.names = 1)
