@@ -46,30 +46,28 @@ fun.asv.t <- t(fun.asv)
 rownames(fun.asv.t[1:20,]) == rownames(funguild[1:20,])
 
 ## Matching the rownames and converting numbers from character to numeric
-## Note number of ASVs matched to funguild datasets are not 100%, so we are removing ASVs that didn't match
 fun.asv.t <- as.data.frame(funguild[1:20,])
 fun.asv.t <- apply(fun.asv.t, 2, function (x) {as.numeric(as.character(x))})
 rownames(fun.asv.t) <- rownames(funguild[1:20,])
 
-## Aggregate (sum) the counts for each guild
-## Note change column number 25 to Guilds for your dataset
-guilds <- as.data.frame(apply(fun.asv.t, 1, function (x) by(x, as.factor(funguild[25,]), sum)))
-
 ## Calculate proportion for guilds
-asv.sum <- t(fun.asv[, -21]) ##To get the rarefied read count from original ASV table
-guilds.proportion <- guilds/rowSums(asv.sum)
+## Note change column number 25 to Guilds for your dataset
+guilds <- as.data.frame(apply((apply(fun.asv.t, 1, function (x) by(x, as.factor(funguild[25,]), sum))), 2, function (x) {x/sum(x)}))
+dim(guilds) 
+
+asv.t <- t(fun.asv[,-21]) #remove taxonomy columnasv.t <- t(fun.asv[,-21]) #remove taxonomy column
 
 #Save the file
-write.table(guilds.proportion, file = "Oak_ITS_funguild_results_propor_01202022.txt", 
+write.table(guilds, file = "Oak_ITS_funguild_results_propor_01202022.txt", 
             sep = "\t", quote = F, row.names = T, col.names = NA)
 
 #Check for columns with many zeroes
-guilds.t <- t(guilds.proportion)
+guilds.t <- t(guilds)
 guilds.t <- subset(guilds.t, 
                    select =  colSums(guilds.t) != 0)
 
 ## Import mapping file
-metadata <- read.table("Oak_ITS_Mapping_File_woBlank_11.16.2021.txt", 
+metadata<- read.table("Oak_ITS_Mapping_File_woBlank_11.16.2021.txt", 
                       sep = "\t", header = T, row.names =1)
 dim(metadata) 
 
